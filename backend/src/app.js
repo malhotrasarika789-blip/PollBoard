@@ -7,9 +7,11 @@ import userRoutes from "./routes/user.routes.js";
 
 const app = express();
 
-
 app.use(cors({
-origin:"http://localhost:5173",
+origin:[
+"http://localhost:5173",
+"https://frontend-psi-indol-95.vercel.app"
+],
 methods:["GET","POST","PATCH","DELETE"],
 credentials:true
 }));
