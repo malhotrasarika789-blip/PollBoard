@@ -14,8 +14,8 @@ const [data,setData]=useState(null);
     async function fetchAnalytics(){
         try{
             const res=await axios.get(
-                `http://localhost:4000/api/polls/analytics/${id}`
-            );
+        `https://pollboard-l1sq.onrender.com/api/polls/analytics/${id}`
+);
 
         console.log(res.data);
             setData(res.data)

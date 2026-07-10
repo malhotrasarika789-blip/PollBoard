@@ -17,7 +17,7 @@ const [password,setPassword]=useState("");
 async function handleSignup(){
 try{
 const res=await axios.post(
-"http://localhost:4000/api/users/signup",
+"https://pollboard-l1sq.onrender.com/api/users/signup",
 { name, email, password }
 );
 console.log(res.data);

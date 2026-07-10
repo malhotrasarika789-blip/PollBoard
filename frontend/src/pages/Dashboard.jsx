@@ -15,7 +15,7 @@ fetchPolls();
 
 async function fetchPolls(){
 try{
-const res=await axios.get("http://localhost:4000/api/polls");
+const res=await axios.get("https://pollboard-l1sq.onrender.com/api/polls");
 setPolls(res.data);
 }catch(error){
 console.log(error);
@@ -125,7 +125,7 @@ function PollCard({id,title,responses,status,published,fetchPolls}){
 async function publishPoll(){
 try{
 await axios.patch(
-`http://localhost:4000/api/polls/publish/${id}`
+`https://pollboard-l1sq.onrender.com/api/polls/publish/${id}`
 );
 
 alert("Poll Published");
@@ -136,7 +136,7 @@ console.log(error);
 }
 
 async function copyLink(){
-const link=`http://localhost:5173/poll/${id}`;
+const link=`https://frontend-psi-indol-95.vercel.app/poll/${id}`;
 await navigator.clipboard.writeText(link);
 alert("Poll link copied ✅");
 }

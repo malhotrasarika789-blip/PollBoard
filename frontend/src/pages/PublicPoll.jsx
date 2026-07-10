@@ -5,7 +5,7 @@ import {io} from "socket.io-client";
 import {Card,CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 
-const socket=io("http://localhost:4000");
+const socket=io("https://pollboard-l1sq.onrender.com");
 
 export default function PublicPoll(){
 
@@ -27,7 +27,7 @@ return()=>{ socket.off("pollUpdated"); };
 async function fetchPoll(){
 try{
 const res=await axios.get(
-`http://localhost:4000/api/polls/${id}`
+`https://pollboard-l1sq.onrender.com/api/polls/${id}`
 );
 console.log(res.data);
 if(!res.data.published){
@@ -54,7 +54,7 @@ return;
 }
 try{
 await axios.post(
-`http://localhost:4000/api/polls/vote/${id}`,
+`https://pollboard-l1sq.onrender.com/api/polls/vote/${id}`,
 {
 optionIndex:selected
 }
