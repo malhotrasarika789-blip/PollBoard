@@ -3,7 +3,7 @@ export async function createPoll(req,res){
 
 try{
 const { title, description, expiry, responseMode, questions }=req.body;
-const poll=await Poll.create({
+const poll = await Poll.create({
 title,
 description,
 expiry,
