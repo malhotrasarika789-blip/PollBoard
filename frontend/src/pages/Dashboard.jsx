@@ -1,11 +1,12 @@
 import {useEffect,useState} from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
 import {Plus,BarChart3,Users,Clock,Copy} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Card,CardContent} from "@/components/ui/card";
+import {useNavigate, Link} from "react-router-dom";
 
 export default function Dashboard(){
+    const navigate = useNavigate();
 
 const [polls,setPolls]=useState([]);
 
@@ -37,8 +38,7 @@ return(
 
 <nav className="flex justify-between items-center px-8 py-6 border-b border-white/10">
 
-<h1 className="text-2xl font-bold text-white">
-Poll<span className="text-orange-500">Board</span>
+<h1 className="text-2xl font-bold text-white">Poll<span className="text-orange-500">Board</span>
 </h1>
 
 <div className="flex gap-3">
@@ -49,8 +49,10 @@ Create Poll
 </Button>
 </Link>
 
-<Button onClick={()=>{ localStorage.removeItem("token"); localStorage.removeItem("user"); window.location.href="/login"; }}
-className="bg-red-500 hover:bg-red-600 text-white">
+<Button onClick={()=>{localStorage.removeItem("token");
+localStorage.removeItem("user");
+navigate("/login");
+}} className="bg-red-500 hover:bg-red-600 text-white">
 Logout
 </Button>
 
