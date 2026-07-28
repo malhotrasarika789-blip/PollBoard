@@ -5,7 +5,7 @@ A real-time polling and analytics platform where users can create polls, share t
 ## 🌐 Live Demo
 
 Frontend:
-https://frontend-psi-indol-95.vercel.app
+pollboard-live.vercel.app
 
 Backend:
 https://pollboard-l1sq.onrender.com
